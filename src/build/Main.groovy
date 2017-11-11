@@ -10,6 +10,10 @@ def RunSecondFunction(a){
 	println a
 	stage('build'){
 		checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/gabrielf/maven-samples.git']]])
-		sh 'mvn -version'
+			withEnv(['MAVEN_HOME=/opt/apache-maven-3.5.2']) {
+    			sh 'mvn -version'
+}
+		
 	}
+
 }
