@@ -10,6 +10,6 @@ def RunSecondFunction(a){
 	println a
 	stage('build'){
 		checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/gabrielf/maven-samples.git']]])
-		sh "mvn clean install"
+		sh 'mvn clean install'
 	}
 }
