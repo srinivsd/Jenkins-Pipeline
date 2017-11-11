@@ -11,7 +11,7 @@ def RunSecondFunction(a){
 	stage('build'){
 		checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/gabrielf/maven-samples.git']]])
     			sh 'ant -version'
-			sh 'mvn -version'
+			sh 'echo $M2_HOME'
 		
 	}
 
